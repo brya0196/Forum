@@ -8,6 +8,7 @@ namespace LambdaForums.Controllers
     public class ForumController : Controller
     {
         private readonly IForum _forumService;
+        private readonly IPost _postService;
 
         public ForumController(IForum forumService)
         {
@@ -29,6 +30,14 @@ namespace LambdaForums.Controllers
             };
 
             return View(model);
+        }
+
+        public IActionResult Topic(int id)
+        {
+            var forum = _forumService.GetById(id);
+            var post = _postService.GetFilteredPosts(id);
+
+            var postListings = 
         }
     }
 }
