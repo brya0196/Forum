@@ -11,6 +11,7 @@ namespace LambdaForums.Data
         Post GetById(int id);
         IEnumerable<Post> GetAll();
         IEnumerable<Post> GetFilteredPost(string searchQuery);
+        IEnumerable<Post> GetPostByForum(int id);
 
         Task Add(Post post);
         Task Delete(int id);
